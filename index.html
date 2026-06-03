@@ -7,20 +7,26 @@
             margin: 0;
             padding: 0;
             width: 100%;
-            
-            /* FORCE SCROLLING: This forces the page to be long enough to scroll the whole image */
-            height: 250vh; 
-            
-            /* FIX 1: Changed .png to .jpg to match your actual file! */
-            background-image: url("background_for_not_bald_peopleomggggsatidk.png");
-            
-            /* This stretches the image edge-to-edge horizontally and lets it scale down naturally */
-            background-size: 100% auto;      
-            background-repeat: no-repeat;   
-            background-position: top center;
+            background-color: black;
         }
-    
-        /* This keeps your text centered nicely over the background */
+
+        body {
+            /* 1. Only loads the image ONCE in code */
+            background-image: url("background_for_not_bald_peopleomggggsatidk.png");
+            background-position: top center;
+            background-repeat: repeat-y; /* Tells it to tile downwards */
+            
+            /* 2. Forces the background to perfectly match the width of the screen */
+            background-size: 100% auto; 
+
+            /* 3. THE ELEGANT MAGIC: Sets the page height to exactly 4 aspect-ratio images tall */
+            aspect-ratio: 100 / calc(4 * 148); 
+            
+            /* (Note: 148 is the approximate height-to-width ratio of your tall image. 
+               Multiplying it by 4 tells the browser to make the page exactly 4 images tall!) */
+        }
+
+        /* Centered text container */
         .text-container {
             position: absolute;
             top: 15%; 
@@ -32,13 +38,12 @@
 
         h1 { margin: 0 0 10px; font-size: 3rem; }
         p { margin: 0; font-style: italic; font-size: 1.5rem; }
-        
-    /* FIX 2: Added the missing closing style tag bracket here! */
     </style>
 </head>
 <body>
 
     <div class="text-container">
+        <h1>.</h1>
         <p>do not be afraid</p>
     </div>
 
