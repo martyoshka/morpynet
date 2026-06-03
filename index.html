@@ -3,34 +3,52 @@
 <head>
     <title>Morpynet</title>
     <style>
-        body {
-            /* 1. Make sure your exact PNG file is here */
+        /* This applies the background to the absolute window canvas */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            min-height: 100%; /* Allows the page to expand downward */
+            
+            /* Your exact masterpiece filename */
             background-image: url("background_for_not_bald_peopleomggggsatidk.png");
             
-            /* 2. CHANGE THESE LINES TO ALLOW SCROLLING: */
-            background-size: contain;      /* Shows the full image without cropping it */
-            background-repeat: repeat-y;   /* Repeats the image downward if the page is tall */
+            /* Forces the image to stretch to the absolute edges and scroll naturally */
+            background-size: 100% auto; 
             background-position: top center;
-            
-            /* 3. Text and layout settings */
-            color: black; 
-            font-family: Arial, sans-serif;
-            margin: 0;
-            
-            /* This forces the webpage layout to be tall so you can scroll */
-            min-height: 200vh; 
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding-top: 50px; /* Puts your text near the top */
+            background-repeat: no-repeat;
         }
-    
-        h1 { margin: 0 0 10px; }
-        p { margin: 0; font-style: italic; }
-</style>
+
+        /* This container handles your text centering without squishing the background */
+        .text-container {
+            position: absolute;
+            top: 25%; /* Adjust this number to move your text up or down the clouds */
+            width: 100%;
+            text-align: center;
+            color: white; 
+            font-family: Arial, sans-serif;
+        }
+
+        h1 { 
+            margin: 0 0 10px; 
+            font-size: 3rem; 
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Makes text pop against the clouds */
+        }
+        
+        p { 
+            margin: 0; 
+            font-style: italic; 
+            font-size: 1.5rem; 
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+    </style>
 </head>
 <body>
-    <h1>.</h1>
-    <p>do not be afraid</p>
+
+    <div class="text-container">
+        <h1>morpy!</h1>
+        <p>thats me!</p>
+    </div>
+
 </body>
 </html>
